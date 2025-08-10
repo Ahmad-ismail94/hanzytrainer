@@ -1,0 +1,1 @@
+import{db}from'./db';export async function exportAll():Promise<Blob>{const[cards,srs,reviews]=await Promise.all([db.cards.toArray(),db.srs.toArray(),db.reviews.toArray()]);const data={cards,srs,reviews,exported_at:Date.now(),version:1};return new Blob([JSON.stringify(data)],{type:'application/json'})}

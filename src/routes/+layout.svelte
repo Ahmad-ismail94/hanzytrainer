@@ -1,0 +1,1 @@
+<script>import { onMount } from 'svelte';onMount(()=>{'serviceWorker'in navigator&&navigator.serviceWorker.register((import.meta.env.BASE_PATH||'')+'/service-worker.js').catch(console.error);});</script><slot />

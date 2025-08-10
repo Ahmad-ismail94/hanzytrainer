@@ -1,0 +1,1 @@
+import{rdp,normalize,resample,type Point}from'./rdp';export type Stroke=Point[];export interface CaptureConfig{simplifyEpsilon?:number;resamplePoints?:number;}export function processStroke(raw:Stroke,cfg:CaptureConfig={}){const eps=cfg.simplifyEpsilon??0.005;const n=cfg.resamplePoints??64;const simp=rdp(raw,eps);const norm=normalize(simp);return resample(norm,n)}
